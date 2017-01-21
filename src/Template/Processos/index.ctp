@@ -7,15 +7,6 @@
 <div class="processos index large-9 medium-8 columns content">
     <h3><?= __('Processos') ?></h3>
     
-    <?php //$this->Form->create('filtrar'); ?>
-        <fieldset>
-            <?php //echo $this->Form->input('ano', array(
-                    //'type' => 'select',
-                    //'options' => array ('2016' => '2016', '2017' => '2017'),
-                    //'label' => 'Selecione o ano'
-            //))  ?>
-        </fieldset>
-
     <?php 
 
             echo $this->Form->create();
