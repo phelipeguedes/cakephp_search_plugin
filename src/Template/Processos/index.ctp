@@ -1,3 +1,5 @@
+
+
 <nav class="large-3 medium-4 columns" id="actions-sidebar">
     <ul class="side-nav">
         <li class="heading"><?= __('Ações') ?></li>
@@ -6,7 +8,7 @@
 </nav>
 <div class="processos index large-9 medium-8 columns content">
     <h3><?= __('Processos') ?></h3>
-    
+
     <?php 
 
             echo $this->Form->create();
@@ -36,7 +38,7 @@
                 <td class="actions">
                     <?= $this->Html->link(__('View'), ['action' => 'view', $processo->id_processo]) ?>
                     <?= $this->Html->link(__('Edit'), ['action' => 'edit', $processo->id_processo]) ?>
-                    <?= $this->Form->postLink(__('Delete'), ['action' => 'delete', $processo->id_processo], ['confirm' => __('Are you sure you want to delete # {0}?', $processo->id_processo)]) ?>
+                    <?= $this->Form->postLink(__('Delete'), ['action' => 'delete', $processo->id_processo], ['confirm' => __('Tem certeza que quer excluir o processo # {0}?', $processo->id_processo)]) ?>
                 </td>
             </tr>
             <?php endforeach; ?>

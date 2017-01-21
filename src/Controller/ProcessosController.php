@@ -59,11 +59,11 @@ class ProcessosController extends AppController
         if ($this->request->is('post')) {
             $processo = $this->Processos->patchEntity($processo, $this->request->data);
             if ($this->Processos->save($processo)) {
-                $this->Flash->success(__('The processo has been saved.'));
+                $this->Flash->success(__('O processo foi salvo!'));
 
                 return $this->redirect(['action' => 'index']);
             } else {
-                $this->Flash->error(__('The processo could not be saved. Please, try again.'));
+                $this->Flash->error(__('O processo não pôde ser salvo. Por favor, tente novamente.'));
             }
         }
         $this->set(compact('processo'));
@@ -85,11 +85,11 @@ class ProcessosController extends AppController
         if ($this->request->is(['patch', 'post', 'put'])) {
             $processo = $this->Processos->patchEntity($processo, $this->request->data);
             if ($this->Processos->save($processo)) {
-                $this->Flash->success(__('The processo has been saved.'));
+                $this->Flash->success(__('O processo foi salvo.'));
 
                 return $this->redirect(['action' => 'index']);
             } else {
-                $this->Flash->error(__('The processo could not be saved. Please, try again.'));
+                $this->Flash->error(__('O processo não pôde ser salvo. Por favor, tente novamente.'));
             }
         }
         $this->set(compact('processo'));
@@ -108,11 +108,12 @@ class ProcessosController extends AppController
         $this->request->allowMethod(['post', 'delete']);
         $processo = $this->Processos->get($id);
         if ($this->Processos->delete($processo)) {
-            $this->Flash->success(__('The processo has been deleted.'));
+            $this->Flash->success(__('O processo foi deletado.'));
         } else {
-            $this->Flash->error(__('The processo could not be deleted. Please, try again.'));
+            $this->Flash->error(__('O processo não pôde ser deletado. Por favor, tente novamente.'));
         }
 
         return $this->redirect(['action' => 'index']);
     }
+
 }

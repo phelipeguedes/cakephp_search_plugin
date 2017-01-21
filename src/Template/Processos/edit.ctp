@@ -4,7 +4,7 @@
         <li><?= $this->Form->postLink(
                 __('Deletar'),
                 ['action' => 'delete', $processo->id_processo],
-                ['confirm' => __('Tem certeza que deseja deletar # {0}?', $processo->id_processo)]
+                ['confirm' => __('Tem certeza que quer excluir o processo # {0}?', $processo->id_processo)]
             )
         ?></li>
         <li><?= $this->Html->link(__('Listar Processos'), ['action' => 'index']) ?></li>

@@ -3,7 +3,7 @@
     <ul class="side-nav">
         <li class="heading"><?= __('Ações') ?></li>
         <li><?= $this->Html->link(__('Editar Processo'), ['action' => 'edit', $processo->id_processo]) ?> </li>
-        <li><?= $this->Form->postLink(__('Deletar Processo'), ['action' => 'delete', $processo->id_processo], ['confirm' => __('Tem certeza que deseja deletar # {0}?', $processo->id_processo)]) ?> </li>
+        <li><?= $this->Form->postLink(__('Deletar Processo'), ['action' => 'delete', $processo->id_processo], ['confirm' => __('Tem certeza que quer excluir o processo # {0}?', $processo->id_processo)]) ?> </li>
         <li><?= $this->Html->link(__('Listar Processos'), ['action' => 'index']) ?> </li>
         <li><?= $this->Html->link(__('Novo Processo'), ['action' => 'add']) ?> </li>
     </ul>
