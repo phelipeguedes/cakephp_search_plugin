@@ -21,18 +21,21 @@ class ProcessosTable extends Table
         parent::initialize($config);
 
         $this->addBehavior('Search.Search');
-
+        
         $this->searchManager()
-         ->value('id_processo')
-         ->add('nome_processo', 'Search.Like', [
+        //->value('created')
+         //->add('created', 'Search.Compare', [
+        ->add('nome_processo', 'Search.Like', [
             'before' => 'true',
             'after' => 'true',
             'fieldMode' => 'OR',
-            'comparison' => 'LIKE',
+            //'comparison' => 'Compare',
+            'comparison' => 'LIKE',            
             'wildcardAny' => '*',
             'wildCardOne' => '?',
-            //'field' => [$this->aliasField('created')]
             'field' => ['nome_processo']
+            //'field' => ['created']
+            //'field' => [$this->aliasField('created')]            
             ])
         ->add('foo', 'Search.Callback', [
             'callback' => function ($query, $args, $filter){

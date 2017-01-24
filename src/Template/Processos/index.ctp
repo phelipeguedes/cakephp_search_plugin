@@ -8,13 +8,14 @@
 </nav>
 <div class="processos index large-9 medium-8 columns content">
     <h3><?= __('Processos') ?></h3>
-
+    <!--<h6>Buscar</h6>-->
     <?php 
 
             echo $this->Form->create();
             echo $this->Form->input('nome_processo', ['placeholder' => 'Nome do Processo', 'label' => 'Buscar Processo']);
             //echo $this->Form->input('q');
-            echo $this->Form->button('Filtrar', ['type' => 'submit']);
+            //echo $this->Form->select('created', array(['selected' => 'selecione o ano', '2016' => '2016', '2017' => '2017']));
+            echo $this->Form->button('Filtrar', ['type' => 'Search']);
             echo $this->Form->end();
     ?>
 
@@ -25,6 +26,7 @@
                 <th scope="col"><?= $this->Paginator->sort('nome_processo') ?></th>
                 <th scope="col"><?= $this->Paginator->sort('created') ?></th>
                 <th scope="col"><?= $this->Paginator->sort('modified') ?></th>
+                <th scope="col"><?= $this->Paginator->sort('Processado') ?></th>
                 <th scope="col" class="actions"><?= __('Actions') ?></th>
             </tr>
         </thead>
@@ -35,6 +37,9 @@
                 <td><?= h($processo->nome_processo) ?></td>
                 <td><?= h($processo->created) ?></td>
                 <td><?= h($processo->modified) ?></td>
+                <td><?= h($processo->processado) == 1 ?  "SIM" :  "NÃO" ?>
+                    
+                </td>
                 <td class="actions">
                     <?= $this->Html->link(__('View'), ['action' => 'view', $processo->id_processo]) ?>
                     <?= $this->Html->link(__('Edit'), ['action' => 'edit', $processo->id_processo]) ?>
