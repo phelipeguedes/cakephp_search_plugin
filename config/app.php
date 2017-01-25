@@ -233,7 +233,7 @@ return [
             'password' => '',
             'database' => 'processamentos',
             'encoding' => 'utf8',
-            'timezone' => 'UTC',
+            'timezone' => '',
             'flags' => [],
             'cacheMetadata' => true,
             'log' => false,
