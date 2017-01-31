@@ -23,24 +23,38 @@ class ProcessosTable extends Table
         $this->addBehavior('Search.Search');
         
         $this->searchManager()
-        //->value('created')
-         //->add('created', 'Search.Compare', [
-        ->add('nome_processo', 'Search.Like', [
+        
+            // Pesquisar pelo nome
+
+        /* ->add('nome_processo', 'Search.Like', [
             'before' => 'true',
             'after' => 'true',
             'fieldMode' => 'OR',
-            //'comparison' => 'Compare',
             'comparison' => 'LIKE',            
             'wildcardAny' => '*',
             'wildCardOne' => '?',
             'field' => ['nome_processo']
-            //'field' => ['created']
-            //'field' => [$this->aliasField('created')]            
             ])
         ->add('foo', 'Search.Callback', [
             'callback' => function ($query, $args, $filter){
-                    // modificar a query
-            }
+                    // modificar a query }
+            ]);*/
+
+            // Pesquisar pelo ano
+
+            ->add('created', 'Search.Like', [
+            'before' => 'true',
+            'after' => 'true',
+            'fieldMode' => 'OR',
+            'comparison' => 'LIKE',            
+            'wildcardAny' => '*',
+            'wildCardOne' => '?',
+            'field' => ['created']
+            ])
+        ->add('foo', 'Search.Callback', [
+            'callback' => function ($query, $args, $filter){
+                    // modificar a query            
+                }
             ]);
     }
 
