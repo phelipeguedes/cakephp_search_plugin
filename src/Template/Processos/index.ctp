@@ -8,24 +8,15 @@
 </nav>
 <div class="processos index large-9 medium-8 columns content">
     <h3><?= __('Processos') ?></h3>
-     <?php 
-            /*
 
-            echo $this->Form->create();
-                echo $this->Form->input('nome_processo', ['placeholder' => 'Nome do Processo', 'label' => 'Buscar Processo']);
-                echo $this->Form->button('Pesquisar', ['type' => 'Search']);
-            echo $this->Form->end();
-            
-            */
-    ?>
-
-    <h6>Buscar Pelo Ano</h6>
+    <h6>Filtrar Pelo Ano</h6>
 
     <?php 
-            echo $this->Form->create();
-                echo $this->Form->select('created', array(['selected' => 'selecione o ano', '2016' => '2016', '2017' => '2017', '2018' => '2018']));
-                echo $this->Form->button('Filtrar', ['type' => 'Search']);
-            echo $this->Form->end();
+                $anos = array('' => 'selecione o ano', '2016' => '2016', '2017' => '2017', '2018' => '2018');
+                echo $this->Form->create();
+                echo $this->Form->select('created', $anos);
+                echo $this->Form->button('Pesquisar', ['type' => 'Search']);
+                echo $this->Form->end();
     ?>
 
     <table cellpadding="0" cellspacing="0">
